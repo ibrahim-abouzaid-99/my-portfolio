@@ -1,0 +1,112 @@
+:root {
+    --primary: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.4);
+    --accent: #00f2ff;
+    --dark: #070a13;
+    --card-bg: rgba(17, 24, 39, 0.95);
+    --text-main: #f1f5f9;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text-main);
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+#mouse-glow {
+    position: fixed; width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    pointer-events: none; transform: translate(-50%, -50%); z-index: 1;
+}
+
+header {
+    background: linear-gradient(180deg, #111827 0%, #070a13 100%);
+    padding: 100px 20px; text-align: center; position: relative; z-index: 2;
+}
+
+.header-profile-img {
+    width: 180px; height: 180px; border-radius: 50%; border: 3px solid var(--primary);
+    box-shadow: 0 0 20px var(--primary-glow); object-fit: cover;
+}
+
+header h1 { font-size: 3rem; margin: 20px 0 10px; }
+
+header p { font-size: 1.2rem; color: var(--accent); min-height: 1.5em; }
+
+.cyber-btn {
+    display: inline-block; padding: 12px 30px; margin-top: 20px; color: #fff;
+    text-decoration: none; border: 1px solid var(--primary); background: rgba(59, 130, 246, 0.05);
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    transition: 0.3s;
+}
+
+.cyber-btn:hover { background: var(--primary); box-shadow: 0 0 15px var(--primary-glow); }
+
+.container { max-width: 1100px; margin: -40px auto 100px; padding: 0 20px; z-index: 3; position: relative; }
+
+.skills-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+.skill-category {
+    background: var(--card-bg); padding: 30px; border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-category h3 { color: var(--accent); margin-bottom: 20px; border-right: 3px solid var(--primary); padding-right: 10px; }
+
+.skill-item { margin-bottom: 20px; }
+.skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; }
+.bar { height: 6px; background: #1f2937; border-radius: 10px; overflow: hidden; }
+.bar span { height: 100%; display: block; background: var(--primary); }
+
+.p-95 { width: 95%; } .p-90 { width: 90%; } .p-85 { width: 85%; } .p-80 { width: 80%; }
+
+.section-title { text-align: center; margin: 60px 0 40px; font-size: 1.8rem; }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+.project-card {
+    background: var(--card-bg); border-radius: 15px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.03); transition: 0.3s;
+}
+
+.project-img-wrapper { position: relative; height: 200px; background: #111; }
+.project-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+.project-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(59, 130, 246, 0.85); display: flex;
+    align-items: center; justify-content: center; opacity: 0; transition: 0.3s;
+    text-decoration: none;
+}
+.project-overlay span { color: #fff; font-weight: bold; border: 2px solid #fff; padding: 8px 18px; border-radius: 4px; }
+
+.project-card:hover { transform: translateY(-5px); }
+.project-card:hover .project-overlay { opacity: 1; }
+
+.project-info { padding: 20px; }
+.project-info h4 { color: var(--accent); margin-bottom: 10px; }
+.project-info p { font-size: 14px; opacity: 0.8; line-height: 1.6; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.6s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* تنسيقات قسم التواصل الجديدة */
+.contact-section { padding-bottom: 80px; text-align: center; }
+.social-links-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.social-btn {
+    padding: 12px 35px; text-decoration: none; color: #fff; font-weight: bold;
+    border-radius: 8px; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);
+    min-width: 140px;
+}
+.github { background: #24292e; }
+.github:hover { background: #404448; box-shadow: 0 0 15px rgba(64, 68, 72, 0.5); }
+.linkedin { background: #0077b5; }
+.linkedin:hover { background: #00a0dc; box-shadow: 0 0 15px rgba(0, 119, 181, 0.5); }
+.whatsapp { background: #25d366; }
+.whatsapp:hover { background: #20b358; box-shadow: 0 0 15px rgba(37, 211, 102, 0.5); }
+.social-btn:hover { transform: translateY(-5px); }
+
+footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 12px; }
